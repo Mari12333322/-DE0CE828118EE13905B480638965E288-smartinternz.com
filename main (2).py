@@ -1,14 +1,25 @@
-# Default function to implement conditions to check leap year
-def CheckLeap(Year):
-  # Checking if the given year is leap year
-  if ((Year % 400 == 0) or (Year % 100 != 0) and (Year % 4 == 0)):
-    print("Given Year is a leap Year")
-  # Else it is not a leap year
-  else:
-    print("Given Year is not a leap Year")
+class Bank_Account:
+    def __init__(self):
+        self.balance=0
+        print("Welcome to Deposit & Withdrawal Machine!")
+        
+    def deposit(self):
+        amount=float(input("Enter amount to be deposited: "))
+        self.balance += amount
+        print("Amount Deposited: ",amount)
+    def withdraw(self):
+        amount = float(input("Enter amount to withdraw: "))
+        if self.balance>=amount:
+            self.balance-=amount
+            print("You withdraw: ",amount)
+        else:
+            print("Insufficient balance ")
+    def display(self):
+        print("Net Available Balance=",self.balance)
+#creating an object of class
+s = Bank_Account()
 
-
-# Taking an input year from user
-Year = int(input("Enter the number: "))
-# Printing result
-CheckLeap(Year)
+#calling functions with that class
+s.deposit()
+s.withdraw()
+s.display()
